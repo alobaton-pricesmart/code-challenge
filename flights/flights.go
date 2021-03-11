@@ -11,7 +11,7 @@ type Flights struct {
 	min   int
 }
 
-type IFlights interface {
+type Flights interface {
 	Process() error
 	MinCost() int
 }

@@ -10,7 +10,7 @@ func TestGetMinCostDefault(t *testing.T) {
 
 	err := f.Process()
 	if err != nil {
-		t.Errorf("Error executing GetMinCost")
+		t.Errorf("Error executing f.Process")
 	}
 
 	got := f.MinCost()
@@ -27,7 +27,7 @@ func TestGetMinCost(t *testing.T) {
 
 	err := f.Process()
 	if err != nil {
-		t.Errorf("Error executing GetMinCost")
+		t.Errorf("Error executing f.Process")
 	}
 
 	got := f.MinCost()
@@ -43,7 +43,7 @@ func TestGetMinCostFailNil(t *testing.T) {
 
 	err := f.Process()
 	if err == nil {
-		t.Errorf("Error can't be nil")
+		t.Errorf("err can't be nil")
 	}
 }
 
@@ -53,7 +53,7 @@ func TestGetMinCostFailOdd(t *testing.T) {
 
 	err := f.Process()
 	if err == nil {
-		t.Errorf("Error can't be nil")
+		t.Errorf("err can't be nil")
 	}
 }
 
@@ -63,6 +63,6 @@ func TestGetMinCostFailCostOdd(t *testing.T) {
 
 	err := f.Process()
 	if err == nil {
-		t.Errorf("Error can't be nil")
+		t.Errorf("err can't be nil")
 	}
 }

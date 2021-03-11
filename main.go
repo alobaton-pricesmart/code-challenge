@@ -12,7 +12,7 @@ func main() {
 
 	err := f.Process()
 	if err != nil {
-		log.Fatal("Error executing GetMinCost:", err)
+		log.Fatal("Error executing f.Process:", err)
 		return
 	}
 
