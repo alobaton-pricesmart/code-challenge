@@ -1,0 +1,56 @@
+{
+    "employees": [
+        {
+            "id": "1",
+            "costs": [
+                {
+                    "cityCode": "A",
+                    "cost": 10
+                },
+                {
+                    "cityCode": "B",
+                    "cost": 20
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "costs": [
+                {
+                    "cityCode": "A",
+                    "cost": 30
+                },
+                {
+                    "cityCode": "B",
+                    "cost": 200
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "costs": [
+                {
+                    "cityCode": "A",
+                    "cost": 400
+                },
+                {
+                    "cityCode": "B",
+                    "cost": 50
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "costs": [
+                {
+                    "cityCode": "A",
+                    "cost": 30
+                },
+                {
+                    "cityCode": "B",
+                    "cost": 20
+                }
+            ]
+        }
+    ]
+}
