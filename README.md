@@ -3,6 +3,10 @@
 # How to start?
 
 ```bash
-$ go build
 $ go run main.go
+```
+
+# How to test?
+```bash
+$ go test code-challenge/flights
 ```
