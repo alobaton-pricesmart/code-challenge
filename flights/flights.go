@@ -8,19 +8,13 @@ import (
 // Flights Struct to map the employee flights.
 type Flights struct {
 	Costs [][]int
-	min   int
-}
-
-type Flights interface {
-	Process() error
-	MinCost() int
 }
 
 // Process Process the min costs throught employee flights.
-func (f *Flights) Process() error {
+func (f *Flights) MinCost() (int, error) {
 	err := f.validate()
 	if err != nil {
-		return err
+		return -1, err
 	}
 
 	min := 0
@@ -38,13 +32,7 @@ func (f *Flights) Process() error {
 		min += differences[i]
 	}
 
-	f.min = min
-	return nil
-}
-
-// MinCost get the min cost of Flights struct
-func (f *Flights) MinCost() int {
-	return f.min
+	return min, nil
 }
 
 // validate Private function that validates the struct
