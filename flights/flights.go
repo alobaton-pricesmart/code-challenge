@@ -11,8 +11,8 @@ type Flights struct {
 }
 
 // Process Process the min costs throught employee flights.
-func (f *Flights) MinCost() (int, error) {
-	err := f.validate()
+func (f Flights) MinCost() (int, error) {
+	err := f.Validate()
 	if err != nil {
 		return -1, err
 	}
@@ -36,7 +36,7 @@ func (f *Flights) MinCost() (int, error) {
 }
 
 // validate Private function that validates the struct
-func (f *Flights) validate() error {
+func (f Flights) Validate() error {
 	if f.Costs == nil || len(f.Costs) == 0 {
 		return errors.New("Costs can't be nil or empty")
 	}
@@ -53,3 +53,4 @@ func (f *Flights) validate() error {
 
 	return nil
 }
+

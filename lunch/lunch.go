@@ -3,10 +3,10 @@ package lunch
 type Lunch struct {
 	N int
 	Boxes []int
-	Preferences   []int
+	Preferences []int
 }
 
-func (l *Lunch) QueueLen() (int, error) {
+func (l Lunch) QueueLen() (int, error) {
 	queue := make(chan int, l.N)
 
 	boxIndex := 0
