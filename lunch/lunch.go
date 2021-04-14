@@ -10,7 +10,7 @@ func (l Lunch) QueueLen() (int, error) {
 	queue := make(chan int, l.N)
 
 	boxIndex := 0
-	go queuePreferences(queue, &boxIndex, l.Boxes, l.Preferences)
+	queuePreferences(queue, &boxIndex, l.Boxes, l.Preferences)
 
 	preferences := []int{}
 	for preference := range queue {
@@ -18,7 +18,7 @@ func (l Lunch) QueueLen() (int, error) {
 	}
 
 	queue = make(chan int, len(preferences))
-	go queuePreferences(queue, &boxIndex, l.Boxes, preferences)
+	queuePreferences(queue, &boxIndex, l.Boxes, preferences)
 
 	return len(queue), nil
 }

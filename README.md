@@ -9,5 +9,5 @@ $ go run main.go
 
 ## How to test?
 ```bash
-$ go test code-challenge/flights
+$  go test code-challenge/...
 ```

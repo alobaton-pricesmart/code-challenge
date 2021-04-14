@@ -6,16 +6,16 @@ import (
 
 // Walk walks the tree t sending all values
 // from the tree to the channel ch.
-func Walk(t *tree.Tree, ch chan int) {
-	WalkRecursive(t, ch)
+func walk(t *tree.Tree, ch chan int) {
+	walkRecursive(t, ch)
 	close(ch)
 }
 
-func WalkRecursive(t *tree.Tree, ch chan int) {
+func walkRecursive(t *tree.Tree, ch chan int) {
 	if t != nil {
-		WalkRecursive(t.Left, ch)
+		walkRecursive(t.Left, ch)
 		ch <- t.Value
-		WalkRecursive(t.Right, ch)
+		walkRecursive(t.Right, ch)
 	}
 }
 
@@ -23,8 +23,8 @@ func WalkRecursive(t *tree.Tree, ch chan int) {
 // t1 and t2 contain the same values.
 func Same(t1, t2 *tree.Tree) bool {
 	ch1, ch2 := make(chan int), make(chan int)
-	go Walk(t1, ch1)
-	go Walk(t2, ch2)
+	go walk(t1, ch1)
+	go walk(t2, ch2)
 	for {
 		n1, ok1 := <-ch1
 		n2, ok2 := <-ch2
