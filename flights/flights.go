@@ -53,4 +53,3 @@ func (f Flights) Validate() error {
 
 	return nil
 }
-
